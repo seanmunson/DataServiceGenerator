@@ -1,0 +1,28 @@
+
+<GenerationSettings>
+	<DataBaseServer>
+		<Name/>
+		<ConnectionString/>
+    <Type>SQL</Type>
+	</DataBaseServer>
+  <Table>
+    <Name></Name>
+    <DataBaseServer/>
+    <Functions>
+      <New generate="yes"/>
+      <Save generate="yes">
+        <PreInsert>
+        </PreInsert
+        <Update>
+          <![CDATA[]]>
+        </Update>
+      </Save>
+      <Delete generate="yes">
+        <PreDelete/>
+        <PostDelete/>
+      </Delete>
+      <Exists generate="yes"/>
+      
+    </Functions>
+  </Table>
+</GenerationSettings>					

@@ -1,0 +1,28 @@
+  DataTable Dt = new DataTable();
+            try
+            {
+                SqlConnection oDbConn = new SqlConnection(txtConnectionString.Text);
+                oDbConn.Open();
+
+                SqlDataAdapter Da = new SqlDataAdapter(STRING_GET_TABLES_SQLEXPRESS, oDbConn);
+                Da.Fill(Dt);
+                
+            }
+            catch(Exception ex)
+            {
+                        MessageBox.Show(ex.Message);
+            }
+            if (Dt.Rows.Count > 0)
+            {
+                MessageBox.Show("Connection successful.");
+                this.Servers.Add(new DataBaseServer(txtNickname.Text,txtConnectionString.Text));
+                for (int i = 0; i < Dt.Rows.Count; i++)
+                {
+                    Tables.Add(new DataServiceGenerator.PersistenceClasses.Table(Dt.Rows[i][0].ToString(),txtNickname.Text));
+                }
+                this.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Database connected, but no tables found");
+            }

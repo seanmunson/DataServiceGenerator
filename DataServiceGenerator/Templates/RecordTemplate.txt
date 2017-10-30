@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+
+namespace {13}
+{
+    class RecordTemplate:object,IDisposable
+    {
+        // Private typed values 
+
+        {0}
+
+        // Public getters and setters
+
+        private static string INSERT="{1}";
+        private static string UPDATE="{2}";
+        private static string DELETE="{3}";
+        private static string SELECT="{4}";
+        private static string EXISTS="{5}";
+
+        // Public methods 
+        private void Insert()
+        {
+          // Uses the static INSERT string and 
+            {6}
+        }
+        public void Save()
+        {
+            // Saves the current state
+            {7}
+        }
+        private void Update()
+        {
+            // updates the state
+            {8}
+        }
+        public void RecordTemplate()
+        {
+            {9}
+        }
+        public void RecordTemplate(long ID)13
+        {
+        // SELECTS the record from the database and stores its
+        // Column values into the Object state;
+            {10}
+        }
+        public static bool Exists(long ID)
+        {
+        // checks the database to see if the record exists exists
+        // Returns TRUE if record exists, FALSE if not;
+            {11}
+        }
+        #region IDisposable Members
+
+        void  IDisposable.Dispose()
+        {
+            {12}
+        }
+
+        #endregion
+    }
+
+}

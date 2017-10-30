@@ -1,0 +1,61 @@
+﻿/* C# / SQL Access class for DataService Generator */
+
+#if ! _CSHARPCORE
+#define _CSHARPCORE
+
+using System;
+using System.Data;
+using System.Data.OleDb;
+
+
+
+public class DSFactory{
+    OleDbConnection oConn;
+    public DSFactory(string Connectionstring)
+    {
+        oConn=new OleDbConnection(Connectionstring);
+        oConn.Open();
+    }
+   
+    public void Connect(string connectionstring)
+    {
+       if (oConn != null)
+        {
+            oConn.Dispose();
+            oConn = null;
+        }
+        oConn = new OleDbConnection(connectionstring);
+        oConn.Open();
+    }
+    private void Close() { oConn.Close(); oConn.Dispose(); }
+
+    public void NonQuery(string SQLCommandText)
+    {
+        OleDbCommand C = new OleDbCommand(SQLCommandText, oConn);
+        C.ExecuteNonQuery();
+    }
+    public long QueryScalar(string SQLCommandText)
+    {
+        long l;
+        OleDbCommand C = new OleDbCommand(SQLCommandText, oConn);
+        l = C.ExecuteScalar();
+        return l;
+    }
+    public System.Data.DataTable QueryDataTable(string SQLCommand)
+    {
+        DataTable Dt = new DataTable();
+        OleDbDataAdapter Da = new OleDbDataAdapter(SQLCommand, oConn);
+        Da.Fill(Dt);
+        Da.Dispose();
+        return Dt;
+    }
+    {0}
+
+    {1}
+}
+public enum DSFactoryTypeEnum
+{
+    {2}
+}
+#endif
+/* BEGIN CLASS PropertyOwners */

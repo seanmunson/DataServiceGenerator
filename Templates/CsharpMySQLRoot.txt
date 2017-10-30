@@ -1,0 +1,49 @@
+﻿/* C# / SQL Access class for DataService Generator */
+#if ! _CSHARPCORE
+#define _CSHARPCORE
+using System;
+using System.Data;
+using MySql.Data.MySqlClient;
+
+static class SQLBasicConnectivity
+{
+    MySqlConnection oConn;
+    public SQLBasicConnectivity() { }
+        public void Connect(string connectionstring)
+        {
+            if (oConn != null)
+                {
+                    oConn.Dispose();
+                    oConn = null;
+                }
+            oConn = new MySqlConnection(connectionstring);
+            oConn.Open();
+        }
+        private void Close()
+        {
+            oConn.Dispose();
+        }   
+    void nonQuery(string SQLCommandText)
+    {
+        MySqlCommand C = new MySqlCommand(SQLCommandText, oConn);
+        C.ExecuteNonQuery();
+    }
+
+    object  QueryScalar(string SQLCommandText)
+    {
+                object l;
+                MySqlCommand C = new MySqlCommand(SQLCommandText, oConn);
+                l=C.ExecuteScalar().ToString();
+                return l;
+    }
+
+    System.Data.DataTable QueryDataTable(string SQLCommand)
+    {
+ 	              DataTable Dt = new DataTable();
+                MySqlDataAdapter Da = new MySqlDataAdapter(SQLCommand, oConn);
+                Da.Fill(Dt);
+                Da.Dispose();
+                return Dt;
+    }
+}
+#endif

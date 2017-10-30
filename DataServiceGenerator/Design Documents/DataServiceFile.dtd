@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE GenerationSettings [
+  <!ELEMENT GenerationSettings (DatabaseServer+,Table?)>
+  <!ELEMENT DataBaseServer (Nickname,Connectionstring)>
+  <!ATTLIST DatabaseServer ID ID #REQUIRED>
+  <!ELEMENT Name (#PCDATA)>
+  <!ELEMENT ConnectionString (#PCDATA)>
+  <!ELEMENT Table (Name,DatabaseServerID,Functions)>
+  <!ELEMENT DataBaseServerID #IDREF>
+  <!ELEMENT Functions (New,Save,Delete,Exist)>
+  <!ELEMENT New EMPTY>
+  <!ATTLIST New generate (yes|no) "yes">
+  <!ELEMENT Save (Insert,Update)>
+  <!ELEMENT Insert (#CDATA)>
+  <!ATTLIST Insert generate (yes|no) "yes">
+  
+  
+  
+  
+]>

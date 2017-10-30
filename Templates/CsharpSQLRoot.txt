@@ -1,0 +1,49 @@
+﻿/* C# / SQL Access class for DataService Generator */
+#if ! _CSHARPCORE
+#define _CSHARPCORE
+using Syste;
+using System.Data;
+using System.Data.SqlClient;
+
+static class SQLBasicConnectivity
+{
+    SqlConnection oConn;
+    public SQLBasicConnectivity() { }
+        public void Connect(string connectionstring)
+        {
+            if (oConn != null)
+                {
+                    oConn.Dispose();
+                    oConn = null;
+                }
+            oConn = new SqlConnection(connectionstring);
+            oConn.Open();
+        }
+        private void Close()
+        {
+            oConn.Dispose();
+        }   
+    void nonQuery(string SQLCommandText)
+    {
+        SqlCommand C = new SqlCommand(SQLCommandText, oConn);
+        C.ExecuteNonQuery();
+    }
+
+    object  QueryScalar(string SQLCommandText)
+    {
+                object l;
+                SqlCommand C = new SqlCommand(SQLCommandText, oConn);
+                l=C.ExecuteScalar().ToString();
+                return l;
+    }
+
+    System.Data.DataTable QueryDataTable(string SQLCommand)
+    {
+ 	            DataTable Dt = new DataTable();
+                SqlDataAdapter Da = new SqlDataAdapter(SQLCommand, oConn);
+                Da.Fill(Dt);
+                Da.Dispose();
+                return Dt;
+    }
+}
+#endif

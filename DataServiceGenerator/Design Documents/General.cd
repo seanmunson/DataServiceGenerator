@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataServiceGenerator.CodeBuilder_Classes.CodeBuilder">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAgAAAAAAAAAABAYAAAAAAAkCAAAABBAAAAAAA=</HashCode>
+      <FileName>CodeBuilder Classes\CodeBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DataServiceGenerator.AccessClasses.IDataSourcePlugin">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAACBAAAAAAAIAAAAAAAAAAAAAAAABBCAAAAA=</HashCode>
+      <FileName>AccessClasses\IDataSourcePlugIn.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DataServiceGenerator.QueryBuilderClasses.IQueryBuilder">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAMAAAAAAAAAAAAAAAAAAAAEAAEAAAAAAAQkAgAA=</HashCode>
+      <FileName>QueryBuilderClasses\IQueryBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="DataServiceGenerator.AccessClasses.DataSourceType" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AccessClasses\IDataSourcePlugIn.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

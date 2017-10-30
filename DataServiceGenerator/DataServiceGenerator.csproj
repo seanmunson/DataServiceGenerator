@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F47F29CB-E598-455C-964A-70B19987502D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataServiceGenerator</RootNamespace>
+    <AssemblyName>DataServiceGenerator</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.2.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessClasses\AccessDataSourcePlugin.cs" />
+    <Compile Include="AccessClasses\DataSource.cs" />
+    <Compile Include="AccessClasses\IDataSourcePlugIn.cs" />
+    <Compile Include="AccessClasses\MySqlDataSourcePlugin.cs" />
+    <Compile Include="AccessClasses\SqlDataSourcePlugin.cs" />
+    <Compile Include="BasicConnectivityClass\IBasicConnectivity.cs" />
+    <Compile Include="BasicConnectivityClass\SQLBasicConnectivity.cs" />
+    <Compile Include="CodeBuilder Classes\CodeBuilder.cs" />
+    <Compile Include="CodeBuilder Classes\CSharpBuilder.cs" />
+    <Compile Include="CodeBuilder Classes\JavaBuilder.cs" />
+    <Compile Include="frmOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOutput.Designer.cs">
+      <DependentUpon>frmOutput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryBuilderClasses\AccessQueryBuilder.cs" />
+    <Compile Include="QueryBuilderClasses\MySqlQueryBuilder.cs" />
+    <Compile Include="QueryBuilderClasses\IQueryBuilder.cs" />
+    <Compile Include="PersistenceClasses\DataBaseServer.cs" />
+    <Compile Include="frmGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerator.Designer.cs">
+      <DependentUpon>frmGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersistenceClasses\GenerationSettings.cs" />
+    <Compile Include="PersistenceClasses\Table.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmGenerator.resx">
+      <DependentUpon>frmGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOutput.resx">
+      <DependentUpon>frmOutput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Design Documents\CUS 1159 - Project Proposal.docx" />
+    <None Include="Design Documents\DataServiceFile.dtd" />
+    <None Include="Design Documents\DataServiceFile.xsd" />
+    <None Include="Design Documents\General.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PersistenceClasses\IxmlSerialize.cs" />
+    <Content Include="Templates\DataServiceGeneratorTemplate.txt" />
+    <Content Include="Templates\RecordTemplate.txt" />
+    <Compile Include="QueryBuilderClasses\SqlQueryBuilder.cs" />
+    <Compile Include="UtilClasses\XmlUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Design Documents\DataServiceFile.xml" />
+    <Content Include="Templates\CsharpMySQLRoot.txt" />
+    <Content Include="Templates\CsharpAccessRoot.txt" />
+    <Content Include="Templates\CsharpSQLRoot.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

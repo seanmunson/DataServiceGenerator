@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<GenerationSettings>
+	<DataBaseServer>
+		<nickname/>
+		<connectstring/>
+	</dbserver>
+	<table>
+		<name/>
+		<connectionstring/>
+		<Functions>
+		
+			<new generate="yes">
+				
+			<save generate="yes">
+				<insert>
+					CDATA
+				</insert>
+				<update>
+					CDATA
+				</update>
+			<delete generate="yes">
+				<predelete>
+					CDATA
+				</predelete>
+			<exist generate="yes">
+		</Functions>	
+<GenerationSettings>					

@@ -1,0 +1,14 @@
+Server=localhost\smuns631;Database=Sample;Trusted_Connection=True;
+
+Data Source=localhost\SQLEXPRESS;Initial Catalog=Sample;Integrated Security=True;Pooling=False
+
+Server=localhost;DATABASE=HappyValleyDB;UID=root;PASSWORD=;
+
+Server=149.68.160.20;DATABASE=HappyValleyDB;UID=happyvalley;PASSWORD=cus1166;
+
+Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Documents and Settings\smuns631\Desktop\Courses\CUS1159\Workspace\DataServiceGenerator\RealEstate.mdb;User Id=admin;Password=;
+
+Look at : Hibernate , Spring products
+
+
+

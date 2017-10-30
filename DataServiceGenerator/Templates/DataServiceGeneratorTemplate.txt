@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DataServiceGenerator.Templates
+{
+    static class DataServiceGeneratorTemplate
+    {
+
+        static void isNotSqlInjection(string s)
+        {
+            // Makes sure that the text is not using escape codes
+        }
+        static void isInRange(long v, long ulimit, short llimit)
+        {
+        }
+
+
+    }
+}
